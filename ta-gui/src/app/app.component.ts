@@ -16,8 +16,11 @@ export class AppComponent {
    title = "ta-gui";
 
    gravar(a: Aluno): void {
-     this.alunoService.gravar(a);
-     this.aluno = {nome: "", cpf: "", email: "", login: ""};
-     this.alunos.push(a);
+     if (this.alunoService.gravar(a)) {
+       this.alunos.push(a);
+       this.aluno = {nome: "", cpf: "", email: "", login: ""};
+     } else {
+       this.aluno.cpf = "";
+     }
   }
 }
