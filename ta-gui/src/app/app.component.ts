@@ -13,6 +13,7 @@ export class AppComponent {
    aluno: Aluno = {nome: "", cpf: "", email: "", login: ""};
    alunoService = new AlunoService();
    alunos: Aluno[] = [];
+   title = "ta-gui";
 
    gravar(a: Aluno): void {
      this.alunoService.gravar(a);
